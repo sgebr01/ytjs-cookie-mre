@@ -12,10 +12,22 @@
     "expo": "~52.0.46",
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
-    "react-native": "0.76.9"
+    "react-native": "0.76.9",
+    "youtubei.js": "^13.4.0",
+    "base-64": "^1.0.0",
+    "event-target-polyfill": "^0.0.4",
+    "react-native-mmkv": "^2.11.0",
+    "react-native-url-polyfill": "^2.0.0",
+    "text-encoding-polyfill": "^0.6.7",
+    "web-streams-polyfill": "^3.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "typescript": "^5.3.3",
+    "@types/react": "~18.3.12",
+    "@types/base-64": "^1.0.2",
+    "@babel/plugin-syntax-import-attributes": "^7.23.3",
+    "@babel/plugin-transform-export-namespace-from": "^7.23.4"
   },
   "private": true
 }

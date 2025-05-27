@@ -4,30 +4,36 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~52.0.46",
-    "expo-status-bar": "~2.0.1",
-    "react": "18.3.1",
-    "react-native": "0.76.9",
-    "youtubei.js": "^13.4.0",
+    "@react-native-cookies/cookies": "^6.2.1",
+    "@react-navigation/native-stack": "^7.3.13",
     "base-64": "^1.0.0",
     "event-target-polyfill": "^0.0.4",
+    "event-target-shim": "^6.0.2",
+    "expo": "53.0.9",
+    "react": "19.0.0",
+    "react-native": "0.79.2",
     "react-native-mmkv": "^2.11.0",
+    "react-native-quick-crypto": "^0.7.13",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.10.0",
     "react-native-url-polyfill": "^2.0.0",
+    "react-native-webview": "^13.13.5",
     "text-encoding-polyfill": "^0.6.7",
-    "web-streams-polyfill": "^3.3.2"
+    "web-streams-polyfill": "^3.3.2",
+    "youtubei.js": "^13.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "typescript": "^5.3.3",
-    "@types/react": "~18.3.12",
-    "@types/base-64": "^1.0.2",
     "@babel/plugin-syntax-import-attributes": "^7.23.3",
-    "@babel/plugin-transform-export-namespace-from": "^7.23.4"
+    "@babel/plugin-transform-export-namespace-from": "^7.23.4",
+    "@types/base-64": "^1.0.2",
+    "@types/react": "~19.0.10",
+    "typescript": "^5.3.3"
   },
   "private": true
 }

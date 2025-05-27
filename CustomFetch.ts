@@ -55,6 +55,8 @@ function extractUrl(input) {
     return String(input);
 }
 
+// Blacklist check for requests that shouldn't be authenticated to look as similar to the original YouTube requests
+// (e.g. service worker, config requests, etc.)
 function isBlacklisted(input: RequestInfo) {
     const urlString = extractUrl(input);
 
@@ -69,8 +71,8 @@ function isBlacklisted(input: RequestInfo) {
 }
 
 /**
- * Utility: clone whatever was passed in (plain object OR Headers)
- * and add/overwrite the extra headers you supply.
+ * Clone whatever was passed in (plain object OR Headers)
+ * and add/overwrite the extra headers supplied.
  */
 function buildHeaders(original: HeadersInit | undefined, extra: Record<string, string> = {}): Headers {
     const h = new Headers(original || {});      // 1. clone
@@ -82,7 +84,6 @@ function buildHeaders(original: HeadersInit | undefined, extra: Record<string, s
 
 export const customFetch = async (input: RequestInfo | URL, init?: RequestInit,): Promise<Response> => {
     if (isBlacklisted(input)) {
-        console.log("Skipping blacklisted request:", input);
         const headers = buildHeaders(init.headers, {
             'User-Agent': UA_STRING,
         });
@@ -99,8 +100,6 @@ export const customFetch = async (input: RequestInfo | URL, init?: RequestInit,)
 
     let sapisid = getCookie(authCookies, "SAPISID")
     let auth = await generateSidAuth(sapisid || "")
-
-    // console.log("HASH", QuickCrypto.createHash("sha1").update("JNc3qXpUDWeYT50z/AEghpSUnzQ4RUDko8").digest("hex"))
 
     const headers = buildHeaders(init.headers, {
         'User-Agent': UA_STRING,

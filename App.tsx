@@ -15,9 +15,8 @@ function HomeScreen({ navigation }) {
   useFocusEffect(() => {
     CookieManager.get("https://www.youtube.com").then((cookies) => {
       if (cookies['LOGIN_INFO'] && cookies["SAPISID"] && cookies["APISID"]) {
-        console.log("User is signed in");
         setSignedIn(true);
-        console.log("Cookies are", Object.keys(cookies));
+        
         // Since we're signed in, we can create an Innertube instance and fetch what we need
         if (accountInfo === null) {
           Innertube.create({ retrieve_player: false, fetch: customFetch }).then((yt) => {
